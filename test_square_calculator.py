@@ -11,13 +11,13 @@ class TestCalculator(unittest.TestCase):
 
     def test_power(self):
         # Test addition functionality
-        result = self.calc.add_5(3,2)
+        result = self.calc.power(3,2)
         self.assertEqual(result, 9)
         
-        result = self.calc.add_5(-1,6)
+        result = self.calc.power(-1,6)
         self.assertEqual(result, 1)
         
-        result = self.calc.add_5(5,0)
+        result = self.calc.power(5,0)
         self.assertEqual(result, 1)
 
 if _name_ == '_main_':
