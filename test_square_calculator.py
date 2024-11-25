@@ -1,27 +1,24 @@
-import unittest
-from square_calculator import SquareCalculator
+# test_calculator.py
 
-class TestSquareCalculator(unittest.TestCase):
+import unittest
+from calculator import Calculator
+
+class TestCalculator(unittest.TestCase):
 
     def setUp(self):
-       
-        self.square_calc = SquareCalculator()
+        # This method is run before each test, useful for setup code.
+        self.calc = Calculator()
 
-    def test_area_positive(self):
-       
-        self.assertEqual(self.square_calc.area(5), 25)  # 5 * 5 = 25
-        self.assertEqual(self.square_calc.area(10), 100)  # 10 * 10 = 100
-
-    def test_area_zero(self):
-       
-        self.assertEqual(self.square_calc.area(0), 0)  # 0 * 0 = 0
-
-    def test_area_negative(self):
+    def test_power(self):
+        # Test addition functionality
+        result = self.calc.add_5(3,2)
+        self.assertEqual(result, 9)
         
-        with self.assertRaises(ValueError):
-            self.square_calc.area(-3)
-        with self.assertRaises(ValueError):
-            self.square_calc.area(-10)
+        result = self.calc.add_5(-1,6)
+        self.assertEqual(result, 1)
+        
+        result = self.calc.add_5(5,0)
+        self.assertEqual(result, 1)
 
-if __name__ == '__main__':
-    unittest.main()
+if _name_ == '_main_':
+    unittest.main()
